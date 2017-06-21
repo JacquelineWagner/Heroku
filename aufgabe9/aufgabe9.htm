@@ -1,0 +1,114 @@
+<!--  
+Aufgabe: 9
+Name: Jacqueline Wagner
+Matrikel: 254786
+Datum: 04.06.2017
+    
+
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+Er wurde nicht kopiert und auch nicht diktiert. Teile der Aufgabe zusammen mit Jana und Selina erstellt*/
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Online-Eisdealer</title>
+<link rel="stylesheet" href="aufgabe9.css" type="text/css"
+	media="screen" />
+
+<script src="js/FormElements.js"></script>
+<!-- <script src="js/FormElements.js" type="text/javascript" charset="utf-8"></script> -->
+</head>
+<header>
+	<p id="H1">Online-Eisdealer</p>
+
+
+</header>
+
+<body>
+	<!-- -->
+
+
+
+
+	<main>
+
+	<fieldset id="Bestellung">
+		<legend> Bestellübersicht </legend>
+		<p id="bestellbox"> </p>
+		<hr>
+		<p>Gesamtpreis:</p> 
+		<p id="gesamtsumme"> </p>
+		<button id="button">Bestellung überprüfen</button>
+	</fieldset>
+
+
+	
+	<fieldset class="auswahl" id="Eissorten">
+		<legend> Eissorten, je Kugel 1€ </legend>
+	</fieldset>
+
+	<!--Toppings -->
+	<fieldset class="auswahl" id="toppings">
+		<legend> Toppings, je 0,50€ </legend>
+	</fieldset>
+
+	<!--Darreichungsform-->
+
+ 
+
+	<fieldset class="auswahl">
+		<legend> Darreichungsform </legend>
+		<p>
+			<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+			<label for="radio1">Becher</label>
+
+		</p>
+		<p>
+			<input type="radio" name="Radiogroup" value="radio2" id="radio2" />
+			<label for="radio2">Waffel</label>
+
+		</p>
+
+	</fieldset>
+
+
+	<!--Lieferung-->
+	<fieldset class="auswahl">
+		<legend> Lieferung </legend>
+		<select name="Select" id="select">
+			<option value="option1">Standart</option>
+			<optgroup label=""></optgroup>
+			<option value="option3">Express</option>
+		</select>
+	</fieldset>
+
+
+	<!--Adresse-->
+	<fieldset class="auswahl">
+		<legend> Adresse </legend>
+
+		<input type="text" class="proof" name="Vorname" placeholder="Vorname" required /> 
+		<input type="text" class="proof" name="Nachname" placeholder="Nachname" required />
+		<!-- 		<hr/> -->
+		
+		<input type="text" class="proof" name="Postleitzahl" pattern="[0-9]{5}"
+			placeholder="Postleitzahl" /> 
+		<input type="text" class="proof" name="Ort" placeholder="Ort" required />
+
+
+		<hr />
+		Mail <input type="email" class="proof" name="Mail" placeholder="place @ between" />
+
+
+		<hr />
+		Nachricht
+		<textarea name="Area" class="proof" cols="30" rows="3" placeholder="long text here"></textarea>
+
+	</fieldset>
+	</main>
+
+</body>
+</html>
