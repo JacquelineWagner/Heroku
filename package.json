@@ -1,9 +1,9 @@
 {
-	"name" : "NodeTest",
+	"name" : "Eisdealer",
 	"version" : "0.0.1",
-	"description" : "first node test",
-	"author" : "Jirka Dell'Oro-Friedl'",
-	"main" : "NodeTest.js",
+	"description" : "first eisdealer test",
+	"author" : "Jacqueline Wagner'",
+	"main" : "FormElements.js",
 	"scripts" : {
 		"start" : "node FormElements.js"
 	},
