@@ -1,11 +1,11 @@
 {
-	"name" : "NodeTest",
+	"name" : "EisTest",
 	"version" : "0.0.1",
-	"description" : "first node test",
-	"author" : "Jirka Dell'Oro-Friedl'",
-	"main" : "NodeTest.js",
+	"description" : "first eis test",
+	"author" : "Jacqueline Wagner",
+	"main" : "FormElements.js",
 	"scripts" : {
-		"start" : "node NodeTest.js"
+		"start" : "node eisTest.js"
 	},
 	"engines" : {
 		"node" : "6.10.3"
