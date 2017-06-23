@@ -1,40 +1,40 @@
-console.log("Server starting");
+namespace Form {
+    window.addEventListener("load", init);
 
-import Http = require("http");
-import Url = require("url");
+    function init(_event: Event): void {
+        console.log("Init");
+        setupColorDivs();
+    }
 
-interface AssocStringString {
-    [key: string]: string;
-}
+    function setupColorDivs(): void {
+        let colors: string[] = ["red", "green", "blue"];
+        let divs: NodeListOf<HTMLDivElement> = document.getElementsByTagName("div");
+        for (let i: number = 0; i < divs.length; i++) {
+            divs[i].style.backgroundColor = colors[i];
+            divs[i].addEventListener("click", handleClickOnButton);
+        }
+    }
 
-let port: number = process.env.PORT;
-if (port == undefined)
-    port = 8100;
+    function handleClickOnButton(_event: Event): void {
+        let style: CSSStyleDeclaration = (<HTMLElement>_event.target).style;
+        console.log(style.backgroundColor);
+        sendRequest(style.backgroundColor);
+    }
 
-let server: Http.Server = Http.createServer();
-server.addListener("listening", handleListen);
-server.addListener("request", handleRequest);
-server.listen(port);
+    function sendRequest(_color: string): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8100?color=" + _color, true);
+        xhr.open("GET", "https://eia-2.herokuapp.com/?color=" + _color, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
 
-function handleListen(): void {
-    console.log("Listening on port: " + port);
-}
-
-function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-    console.log("Request received");
-
-    console.log(_request.url);
-    let query: AssocStringString = Url.parse(_request.url, true).query;
-    console.log(query);
-    let key: string;
-    _response.setHeader("Access-Control-Allow-Origin", "*");
-    _response.setHeader("content-type", "text/html; charset=utf-8");
-
-    for (key in query)
-        _response.write(key + ":" + query[key]);
-
-    //    _response.setHeader("Access-Control-Allow-Origin", "*");
-    //    _response.setHeader("content-type", "text/html; charset=utf-8");
-    //    _response.write("Ich höre Stimmen!");
-    _response.end();
+    function handleStateChange(_event: ProgressEvent): void {
+        var xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+            alert(xhr.response);
+        }
+    }
 }
