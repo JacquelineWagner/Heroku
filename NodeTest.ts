@@ -31,15 +31,15 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     _response.setHeader("content-type", "text/html; charset=utf-8");
 
     for (key in query) {
-   _response.write("Ihre Bestellung");
+        _response.write("Ihre Bestellung");
         if (query[key] == "0") {
             continue;
         }
-     
+
 
         _response.write(key + ":" + " " + query[key] + "<br>");
-        
-        
+
+
     }
     //    _response.setHeader("Access-Control-Allow-Origin", "*");
     //    _response.setHeader("content-type", "text/html; charset=utf-8");
