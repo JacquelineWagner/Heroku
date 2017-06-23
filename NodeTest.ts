@@ -35,11 +35,14 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         if (query[key] == "0") {
             continue;
         }
+               _response.write("Ihre Bestellung");
+
         _response.write(key + ":" + " " + query[key] + "<br>");
+        
+        
     }
     //    _response.setHeader("Access-Control-Allow-Origin", "*");
     //    _response.setHeader("content-type", "text/html; charset=utf-8");
-    //    _response.write("Ich höre Stimmen!");
 
     _response.end();
 }
