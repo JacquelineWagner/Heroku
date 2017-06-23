@@ -20,11 +20,11 @@ namespace Form {
     let toppings: string[] = ["Sahne", "Schokosauce", "Karamelsauce", "Streusel",
         "Fruechte-Mix"];
 
-    let bestellung: string[] = [];
-
-    //    Preise
-    let eissortenPrice: number = 1;
-    let toppingPrice: number = 0.50;
+    //    let bestellung: string[] = [];
+    //
+    //    //    Preise
+    //    let eissortenPrice: number = 1;
+    //    let toppingPrice: number = 0.50;
 
 
 
@@ -72,7 +72,7 @@ namespace Form {
             label.appendChild(input);
             inputsEissorten.push(input);
             fieldsetEissorte.appendChild(label);
-
+            input.name = eissorten[i];
             input.className = "stepper";
 
             console.log(eissorten[i]);
@@ -91,7 +91,7 @@ namespace Form {
             label.appendChild(input);
             inputsToppings.push(input);
             fieldsetTopping.appendChild(label);
-
+            input.name = toppings[i];
             input.className = "checkbox";
 
             console.log(toppings[i]);
@@ -146,18 +146,7 @@ namespace Form {
             proof.push(inputs);
             console.log(inputs);
         }
-
-        for (let i: number = 0; i < proof.length; i++) {
-            console.log(proof.length);
-            if (proof[i].validity.valid == false) {
-                alert("Die Eingaben sind nicht korrekt. Bitte erneut ueberpruefen!");
-                location.reload();
-            }
-            else {
-                alert("Vielen Dank fuer Ihre Bestellung! Bis zum naechsten Mal");
-                location.reload();
-            }
-        }
+        //        for (let i: number = 0; i < proof.length; i++) {        //            console.log(proof.length);        //            if (proof[i].validity.valid == false) {        //                alert("Die Eingaben sind nicht korrekt. Bitte erneut ueberpruefen!");        //                location.reload();        //            }        //            else {        //                alert("Vielen Dank fuer Ihre Bestellung! Bis zum naechsten Mal");        //                location.reload();        //            }        //        }
     }
 
 }

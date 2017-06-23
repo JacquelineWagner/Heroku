@@ -15,10 +15,11 @@ var Form;
         "Zitrone"];
     let toppings = ["Sahne", "Schokosauce", "Karamelsauce", "Streusel",
         "Fruechte-Mix"];
-    let bestellung = [];
-    //    Preise
-    let eissortenPrice = 1;
-    let toppingPrice = 0.50;
+    //    let bestellung: string[] = [];
+    //
+    //    //    Preise
+    //    let eissortenPrice: number = 1;
+    //    let toppingPrice: number = 0.50;
     let inputsEissorten = [];
     let inputsToppings = [];
     let fieldsetTopping;
@@ -45,6 +46,7 @@ var Form;
             label.appendChild(input);
             inputsEissorten.push(input);
             fieldsetEissorte.appendChild(label);
+            input.name = eissorten[i];
             input.className = "stepper";
             console.log(eissorten[i]);
         }
@@ -57,6 +59,7 @@ var Form;
             label.appendChild(input);
             inputsToppings.push(input);
             fieldsetTopping.appendChild(label);
+            input.name = toppings[i];
             input.className = "checkbox";
             console.log(toppings[i]);
         }
@@ -95,17 +98,7 @@ var Form;
             proof.push(inputs);
             console.log(inputs);
         }
-        for (let i = 0; i < proof.length; i++) {
-            console.log(proof.length);
-            if (proof[i].validity.valid == false) {
-                alert("Die Eingaben sind nicht korrekt. Bitte erneut ueberpruefen!");
-                location.reload();
-            }
-            else {
-                alert("Vielen Dank fuer Ihre Bestellung! Bis zum naechsten Mal");
-                location.reload();
-            }
-        }
+        //        for (let i: number = 0; i < proof.length; i++) {        //            console.log(proof.length);        //            if (proof[i].validity.valid == false) {        //                alert("Die Eingaben sind nicht korrekt. Bitte erneut ueberpruefen!");        //                location.reload();        //            }        //            else {        //                alert("Vielen Dank fuer Ihre Bestellung! Bis zum naechsten Mal");        //                location.reload();        //            }        //        }
     }
 })(Form || (Form = {}));
 //# sourceMappingURL=FormElements.js.map
