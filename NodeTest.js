@@ -29,7 +29,7 @@ function handleRequest(_request, _response) {
     }
     //    _response.setHeader("Access-Control-Allow-Origin", "*");
     //    _response.setHeader("content-type", "text/html; charset=utf-8");
-    _response.write("Vielen Dank f�r Ihre Bestellung");
+    _response.write("<br>" + "Vielen Dank f�r Ihre Bestellung");
     _response.end();
 }
 //# sourceMappingURL=NodeTest.js.map
