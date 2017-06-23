@@ -20,7 +20,7 @@ function handleRequest(_request, _response) {
     let key;
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
-    _response.write("<!DOCTYPE html><html><head><title='IceShop'><meta charset='utf8'></head><body>");
+    _response.write("<!DOCTYPE html><html><head><title>Iceshop</title><meta charset='utf8'></head><body>");
     _response.write("Ihre Bestellung" + ":" + "<br>" + "<br>");
     for (key in query) {
         if (query[key] == "0") {
